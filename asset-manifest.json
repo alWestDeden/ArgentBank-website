@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ArgentBank-website/react-gh-pages/static/css/main.ae71d505.css",
+    "main.js": "/ArgentBank-website/react-gh-pages/static/js/main.85bb633b.js",
+    "static/js/787.71e672d5.chunk.js": "/ArgentBank-website/react-gh-pages/static/js/787.71e672d5.chunk.js",
+    "static/media/logo.svg": "/ArgentBank-website/react-gh-pages/static/media/logo.b2e5a01e505f739f1484b881277d5186.svg",
+    "index.html": "/ArgentBank-website/react-gh-pages/index.html",
+    "main.ae71d505.css.map": "/ArgentBank-website/react-gh-pages/static/css/main.ae71d505.css.map",
+    "main.85bb633b.js.map": "/ArgentBank-website/react-gh-pages/static/js/main.85bb633b.js.map",
+    "787.71e672d5.chunk.js.map": "/ArgentBank-website/react-gh-pages/static/js/787.71e672d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae71d505.css",
+    "static/js/main.85bb633b.js"
+  ]
+}
