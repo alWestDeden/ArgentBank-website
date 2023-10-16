@@ -23,10 +23,9 @@ mongo --version
 
 ### Instructions
 
-1. Fork this repo
-1. Clone the repo onto your computer
-1. Open a terminal window in the cloned project
-1. Run the following commands:
+1. Download this repo
+2. Open a terminal window in the cloned project
+3. Run the following commands:
 
 ```bash
 # Install dependencies
@@ -70,3 +69,9 @@ Static HTML and CSS has been created for most of the site and is located in: `/d
 For some of the dynamic features, like toggling user editing, there is a mock-up for it in `/designs/wireframes/edit-user-name.png`.
 
 And for the API model that you will be proposing for transactitons, the wireframe can be found in `/designs/wireframes/transactions.png`.
+
+## Front-End
+
+The Front-End website is located in: `/website`.
+
+Check the README file for instructions.
