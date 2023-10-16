@@ -1,0 +1,19 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 27%;
+}
+.feature img {
+  width: 100px;
+  border: 10px solid #00bc77;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.feature h3 {
+  margin: 20px 0 8px;
+}
+.feature p {
+  margin: 16px 0;
+}/*# sourceMappingURL=feature.css.map */

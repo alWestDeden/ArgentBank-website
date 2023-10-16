@@ -3,7 +3,7 @@ import "../style/footer.scss"
 function Footer() {
 	return (
 		<footer className='footer'>
-			<p>Copyright 2020 Argent Bank</p>
+			<h1>Copyright 2020 Argent Bank</h1>
 		</footer>
 	)
 }

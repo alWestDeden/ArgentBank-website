@@ -1,0 +1,34 @@
+.login-background {
+  background-color: #12002b;
+  padding: 3rem 0 55%;
+  height: 100%;
+}
+.login-background .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.login-background .input-wrapper {
+  margin-bottom: 16px;
+}
+.login-background .input-wrapper label {
+  font-weight: bold;
+}
+.login-background .input-wrapper input {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+.login-background button {
+  background-color: #00bc77;
+  color: white;
+  margin-top: 16px;
+  padding: 8px;
+  width: 100%;
+  border: none;
+}/*# sourceMappingURL=Login.css.map */

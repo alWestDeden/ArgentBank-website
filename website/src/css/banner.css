@@ -1,0 +1,20 @@
+.banner {
+  background-image: url(../assets/image/bank-tree.jpeg);
+  background-position: 0% 33%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  position: relative;
+}
+.banner .overlay {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 300px;
+  background-color: white;
+  padding: 2rem;
+}
+.banner .overlay p {
+  margin-top: 19px;
+}/*# sourceMappingURL=banner.css.map */

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
 // import { faRightFromBracket, faCircleUser } from "@fortawesome/free-solid-svg-icons"
 import argentBankLogo from "../assets/image/argentBankLogo.png"
 import "../style/header.scss"
@@ -15,13 +15,13 @@ function Header() {
 			<div>
 				{/* link to the User's Profile URL */}
 				{/* <Link to='/user/profile'>
-					<FontAwesomeIcon icon={faCircleUser} />
+					<FontAwesomeIcon icon={faRightFromBracket} />
 					{userName}
 				</Link> */}
 				{/* link to the Home's URL */}
-				<Link to='/'>
-					<FontAwesomeIcon icon={faRightFromBracket} />
-					Sign Out
+				<Link to='/user/login'>
+					<FontAwesomeIcon icon={faCircleUser} />
+					Sign In
 				</Link>
 			</div>
 		</nav>
