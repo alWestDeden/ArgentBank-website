@@ -1,10 +1,10 @@
-import "../style/Home.scss"
-import "../style/global.scss"
-import Banner from "../components/Banner"
-import Feature from "../components/Feature"
-import Chat from "../assets/image/icon-chat.png"
-import Money from "../assets/image/icon-money.png"
-import Security from "../assets/image/icon-security.png"
+import "../../style/Home.scss"
+import "../../style/global.scss"
+import Banner from "../../components/Banner"
+import Feature from "../../components/Feature"
+import Chat from "../../assets/image/icon-chat.png"
+import Money from "../../assets/image/icon-money.png"
+import Security from "../../assets/image/icon-security.png"
 
 function Home() {
 	const features = [

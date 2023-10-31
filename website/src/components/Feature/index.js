@@ -1,4 +1,4 @@
-import "../style/feature.scss"
+import "../../style/feature.scss"
 
 function Feature({ icon, iconAlt, title, text }) {
 	return (
