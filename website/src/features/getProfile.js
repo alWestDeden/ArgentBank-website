@@ -77,7 +77,7 @@ const { actions, reducer } = createSlice({
 			reducer: (draft, action) => {
 				if (draft.status === "pending" || draft.status === "updating") {
 					draft.error = action.payload.error
-					draft.profile = null
+					draft.user = null
 					draft.logged = false
 					draft.status = "rejected"
 					return
@@ -85,9 +85,12 @@ const { actions, reducer } = createSlice({
 				return
 			},
 		},
-		// ...
+		reset: {
+			reducer: () => initialState,
+		},
 	},
 })
 
-const { fetching, resolved, rejected } = actions
+export const { resolved, reset } = actions
+
 export default reducer

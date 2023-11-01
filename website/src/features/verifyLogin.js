@@ -106,7 +106,12 @@ const { actions, reducer } = createSlice({
 				return
 			},
 		},
+		reset: {
+			reducer: () => initialState,
+		},
 	},
 })
+
+export const { reset } = actions
 
 export default reducer

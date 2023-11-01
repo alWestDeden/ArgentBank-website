@@ -3,15 +3,25 @@ import { useDispatch, useSelector } from "react-redux"
 import { getProfile } from "../../features/getProfile"
 import Service from "../../components/Service"
 import "../../style/User.scss"
+import { useNavigate } from "react-router-dom"
+import * as loginActions from "../../features/verifyLogin"
+import * as profileActions from "../../features/getProfile"
 
 export default function User() {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const token = useSelector((state) => state.login.token)
 	const user = useSelector((state) => state.profile.user)
 
 	useEffect(() => {
 		dispatch(getProfile(token))
 	}, [dispatch, token])
+
+	setTimeout(() => {
+		dispatch(loginActions.reset())
+		dispatch(profileActions.reset())
+		navigate("/")
+	}, 360000)
 
 	// const lastName = useSelector((state) => state.profile.user.lastName)
 	// const firstName = useSelector((state) => state.profile.user.firstName)
