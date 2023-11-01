@@ -7,7 +7,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
-import Signup from "./pages/Signup"
+import User from "./pages/User"
 
 const domNode = document.getElementById("root")
 const root = createRoot(domNode)
@@ -20,7 +20,7 @@ root.render(
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/user/login' element={<Login />} />
-					<Route path='/user/signup' element={<Signup />} />
+					<Route path='/user/signup' element={<User />} />
 					{/* <Route path='/user/profile' element={<Profile />} />
 					<Route path='*' element={<Error />} /> */}
 				</Routes>

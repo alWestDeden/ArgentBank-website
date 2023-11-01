@@ -1,0 +1,32 @@
+.service {
+  display: flex;
+  justify-content: space-between;
+  color: #2c3e50;
+  background-color: white;
+  width: 80%;
+  margin-bottom: 32px;
+  padding: 24px;
+}
+.service p {
+  margin: 0;
+}
+.service h4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+.service .transactions {
+  display: flex;
+  align-items: center;
+}
+.service .transactions button {
+  width: 200px;
+  background-color: #00bc77;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 8px;
+  border-width: 2px;
+  border-top: none;
+  border-left: none;
+}/*# sourceMappingURL=service.css.map */
