@@ -13,9 +13,9 @@ function Header() {
 	const dispatch = useDispatch()
 	const user = useSelector((state) => state.profile.user)
 
-	useEffect(() => {
-		dispatch(profileActions.resolved(user))
-	}, [dispatch, user])
+	// useEffect(() => {
+	// 	dispatch(profileActions.resolved(user))
+	// }, [dispatch, user])
 
 	function logOut() {
 		dispatch(loginActions.reset())
