@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { getProfile } from "../../features/getProfile"
 import Service from "../../components/Service"
 import "../../style/User.scss"
+import { useNavigate } from "react-router-dom"
 
 export default function User() {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	// const navigate = useNavigate()
 	const token = useSelector((state) => state.login.token)
 	const user = useSelector((state) => state.profile.user)
@@ -52,7 +54,9 @@ export default function User() {
 						{firstName} {lastName}!
 					</p>
 				</div>
-				<button className='edit-name'>Edit Name</button>
+				<button className='edit-name' onClick={() => navigate("/user/profile")}>
+					Edit Name
+				</button>
 				{services.map((service, index) => (
 					<Service key={index} type={service.type} balance={service.balance} status={service.status} />
 				))}

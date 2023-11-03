@@ -24,11 +24,12 @@
   padding: 5px;
   font-size: 1.2rem;
 }
-.login-background button {
+.login-background .login-button {
   background-color: #00bc77;
   color: white;
   margin-top: 16px;
   padding: 8px;
   width: 100%;
   border: none;
+  text-decoration: underline;
 }/*# sourceMappingURL=Login.css.map */

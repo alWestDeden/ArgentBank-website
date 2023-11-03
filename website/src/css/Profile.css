@@ -1,0 +1,50 @@
+.profile-background {
+  background-color: #12002b;
+  padding: 3rem 0 55%;
+  height: 100%;
+}
+.profile-background .profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.profile-background .profile .arrow-left {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.profile-background .profile #login--alert {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+  min-height: 2.75rem;
+  margin-block: 0;
+}
+.profile-background .profile .input-wrapper {
+  margin-bottom: 16px;
+}
+.profile-background .profile .input-wrapper label {
+  font-weight: bold;
+}
+.profile-background .profile .input-wrapper input {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+.profile-background .profile .profile-button {
+  background-color: #00bc77;
+  color: white;
+  margin-top: 16px;
+  padding: 8px;
+  width: 100%;
+  border: none;
+}
+.profile-background .profile .greyed {
+  background-color: grey;
+}/*# sourceMappingURL=Profile.css.map */

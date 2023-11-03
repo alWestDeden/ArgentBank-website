@@ -30,12 +30,13 @@
 		}
 	}
 
-	& button {
+	& .login-button {
 		background-color: $third-color;
 		color: $light-color;
 		margin-top: 16px;
 		padding: 8px;
 		width: 100%;
 		border: none;
+		text-decoration: underline;
 	}
 }

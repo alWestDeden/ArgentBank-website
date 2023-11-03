@@ -51,7 +51,7 @@ function Login() {
 					break
 				// if user unknown, print an error message
 				case 400:
-					alert.innerText = "Utilisateur non autorisé !"
+					alert.innerText = "Invalid fields !"
 					setTimeout(() => {
 						if (alert) {
 							alert.innerText = ""
@@ -60,7 +60,7 @@ function Login() {
 					break
 				// if server not working, print an error message
 				case 500:
-					alert.innerText = "Erreur interne au serveur !"
+					alert.innerText = "Internal Server Error !"
 					setTimeout(() => {
 						if (alert) {
 							alert.innerText = ""
@@ -69,7 +69,7 @@ function Login() {
 					break
 				// for others kind of errors, print an error message
 				default:
-					alert.innerText = "Pas de réponse du serveur !"
+					alert.innerText = "Can't connect to server !"
 					setTimeout(() => {
 						if (alert) {
 							alert.innerText = ""
@@ -86,12 +86,12 @@ function Login() {
 				<p id='login--alert'></p>
 				<form onSubmit={submitForm}>
 					<div className='input-wrapper'>
-						<label>User's email</label>
-						<input type='text' name='email' onBlur={(e) => checkEmail(e)}></input>
+						<label>Username</label>
+						<input type='text' name='email' onBlur={(e) => checkEmail(e)} autoComplete='on'></input>
 					</div>
 					<div className='input-wrapper'>
 						<label>Password</label>
-						<input type='password' name='password'></input>
+						<input type='password' name='password' autoComplete='on'></input>
 					</div>
 					<div className='remember-me'>
 						<input type='checkbox' name='rememberMe'></input>

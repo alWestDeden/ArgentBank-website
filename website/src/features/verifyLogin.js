@@ -1,4 +1,3 @@
-import { selectLogin } from "../utils/selectors"
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
@@ -12,8 +11,7 @@ export function verifyLogin(user) {
 	// use a asynchronous thunk
 	return async (dispatch, getState) => {
 		// check if any request allready pending
-		const selectLoginByUser = selectLogin(user)
-		const status = selectLoginByUser(getState()).status
+		const status = getState().login.status
 		if (status === "pending" || status === "updating") {
 			return
 		}
@@ -112,6 +110,6 @@ const { actions, reducer } = createSlice({
 	},
 })
 
-export const { reset } = actions
+export const { code, reset } = actions
 
 export default reducer

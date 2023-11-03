@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 // import { getProfile } from "../../features/getProfile"
@@ -33,7 +33,7 @@ function Header() {
 					</Link>
 				</div>
 				<div>
-					<Link to='/user/profile' className='user'>
+					<Link to='/user/signup' className='user'>
 						<FontAwesomeIcon icon={faRightFromBracket} />
 						{userName}
 					</Link>
