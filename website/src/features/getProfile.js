@@ -1,20 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-	status: "void",
-	user: null,
-	error: null,
-	logged: false,
+	email: null,
+	firstName: null,
+	lastName: null,
+	userName: null,
 }
 
 export function getProfile() {
 	return async (dispatch, getState) => {
-		const status = getState().profile.status
-		if (status === "pending" || status === "updating") {
-			return
-		}
 		const token = getState().login.token
-		dispatch(actions.fetching(token))
 		try {
 			const response = await fetch(`http://localhost:3001/api/v1/user/profile`, {
 				method: "POST",
@@ -37,65 +32,31 @@ export function getProfile() {
 }
 
 const { actions, reducer } = createSlice({
-	name: "profile",
+	name: "user",
 	initialState,
 	reducers: {
-		fetching: {
-			// la fonction de reducer
-			reducer: (draft, action) => {
-				if (draft.status === "void") {
-					draft.status = "pending"
-					return
-				}
-				if (draft.status === "rejected") {
-					draft.error = null
-					draft.status = "pending"
-					return
-				}
-				if (draft.status === "resolved") {
-					draft.status = "updating"
-					return
-				}
-			},
-		},
 		resolved: {
 			// la fonction de reducer
 			reducer: (draft, action) => {
-				// const { email, firstName, lastName, userName } = action.payload.profile
-				// console.log(email, firstName, lastName, userName)
-				if (draft.status === "pending" || draft.status === "updating") {
-					draft.user = action.payload
-					draft.logged = true
-					draft.status = "resolved"
-					return
-				}
+				draft.email = action.payload.firstName
+				draft.firstName = action.payload.firstName
+				draft.lastName = action.payload.lastName
+				draft.userName = action.payload.userName
 				return
 			},
 		},
 		rejected: {
 			// la fonction de reducer
 			reducer: (draft, action) => {
-				if (draft.status === "pending" || draft.status === "updating") {
-					draft.error = action.payload.error
-					draft.user = null
-					draft.logged = false
-					draft.status = "rejected"
-					return
-				}
+				draft.error = action.payload.error
+				draft = initialState
 				return
 			},
 		},
 		update: {
 			// la fonction de reducer
 			reducer: (draft, action) => {
-				// const { email, firstName, lastName, userName } = action.payload.profile
-				// console.log(email, firstName, lastName, userName)
-				if (draft.status === "pending" || draft.status === "updating") {
-					draft.user.userName = action.payload
-					draft.logged = true
-					draft.status = "resolved"
-					return
-				}
+				draft.userName = action.payload
 				return
 			},
 		},

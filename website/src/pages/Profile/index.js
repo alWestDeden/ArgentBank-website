@@ -13,7 +13,7 @@ function Profile() {
 	const dispatch = useDispatch()
 	//get the token and the user from the store
 	const token = useSelector((state) => state.login.token)
-	const user = useSelector((state) => state.profile.user)
+	const user = useSelector((state) => state.user)
 	const [updatable, setUpdatable] = useState(true)
 	// check email format
 	function checkUserName(e) {
@@ -21,7 +21,6 @@ function Profile() {
 		const alert = document.getElementById("login--alert")
 		let regex = new RegExp("[^a-zA-Z0-9_-]+")
 		let resultat = regex.test(e.target.value)
-		console.log(resultat)
 		if (resultat) {
 			alert.innerText = "Only letters, numbers, - and _ characters allowed!"
 			setUpdatable(false)
@@ -48,7 +47,7 @@ function Profile() {
 				// if user authorized, go to his account's page
 				case 200:
 					navigate("/user/signup")
-					dispatch(profileActions.update(userName))
+					dispatch(profileActions.update(formJson.userName))
 					break
 				// if user unknown, print an error message
 				case 400:

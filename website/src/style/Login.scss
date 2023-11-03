@@ -14,29 +14,37 @@
 		width: 300px;
 		margin: 0 auto;
 		padding: 2rem;
-	}
 
-	& .input-wrapper {
-		margin-bottom: 16px;
-
-		& label {
-			font-weight: bold;
+		& #login--alert {
+			color: red;
+			font-size: 1rem;
+			text-align: center;
+			min-height: 2.75rem;
+			margin-block: 0;
 		}
 
-		& input {
+		& .input-wrapper {
+			margin-bottom: 16px;
+
+			& label {
+				font-weight: bold;
+			}
+
+			& input {
+				width: 100%;
+				padding: 5px;
+				font-size: 1.2rem;
+			}
+		}
+
+		& .login-button {
+			background-color: $third-color;
+			color: $light-color;
+			margin-top: 16px;
+			padding: 8px;
 			width: 100%;
-			padding: 5px;
-			font-size: 1.2rem;
+			border: none;
+			text-decoration: underline;
 		}
-	}
-
-	& .login-button {
-		background-color: $third-color;
-		color: $light-color;
-		margin-top: 16px;
-		padding: 8px;
-		width: 100%;
-		border: none;
-		text-decoration: underline;
 	}
 }

@@ -11,7 +11,7 @@ import * as profileActions from "../../features/getProfile"
 
 function Header() {
 	const dispatch = useDispatch()
-	const user = useSelector((state) => state.profile.user)
+	const user = useSelector((state) => state.user)
 
 	// useEffect(() => {
 	// 	dispatch(profileActions.resolved(user))
@@ -22,7 +22,7 @@ function Header() {
 		dispatch(profileActions.reset())
 	}
 
-	if (user !== null) {
+	if (user.userName !== null) {
 		const userName = user.userName
 		return (
 			<nav className='header'>

@@ -10,7 +10,7 @@ export default function User() {
 	const navigate = useNavigate()
 	// const navigate = useNavigate()
 	const token = useSelector((state) => state.login.token)
-	const user = useSelector((state) => state.profile.user)
+	const user = useSelector((state) => state.user)
 
 	useEffect(() => {
 		dispatch(getProfile(token))
