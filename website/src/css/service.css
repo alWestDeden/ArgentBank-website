@@ -29,4 +29,13 @@
   border-width: 2px;
   border-top: none;
   border-left: none;
+}
+
+@media only screen and (max-width: 920px) {
+  .service {
+    flex-direction: column;
+  }
+  .service .transactions button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=service.css.map */

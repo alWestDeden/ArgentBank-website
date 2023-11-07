@@ -17,4 +17,12 @@
 }
 .banner .overlay p {
   margin-top: 19px;
+}
+
+@media only screen and (max-width: 920px) {
+  .banner .overlay {
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
 }/*# sourceMappingURL=banner.css.map */

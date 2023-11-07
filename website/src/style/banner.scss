@@ -22,3 +22,12 @@
 		}
 	}
 }
+@include devices(mobile) {
+	.banner {
+		& .overlay {
+			right: 0;
+			left: 0;
+			margin: auto;
+		}
+	}
+}

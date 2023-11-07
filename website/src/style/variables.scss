@@ -4,3 +4,12 @@ $third-color: #00bc77;
 $light-color: white;
 $dark-color: #12002b;
 $font-family: Avenir, Helvetica, Arial, sans-serif;
+
+// media queries
+@mixin devices($breakpoint) {
+	@if $breakpoint == mobile {
+		@media only screen and (max-width: 920px) {
+			@content;
+		}
+	}
+}

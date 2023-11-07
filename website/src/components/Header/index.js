@@ -32,7 +32,7 @@ function Header() {
 						<img src={argentBankLogo} alt='ArgentBank logo' />
 					</Link>
 				</div>
-				<div>
+				<div className='right-header'>
 					<Link to='/user/signup' className='user'>
 						<FontAwesomeIcon icon={faRightFromBracket} />
 						{userName}

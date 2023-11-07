@@ -32,3 +32,13 @@
 		}
 	}
 }
+@include devices(mobile) {
+	.service {
+		flex-direction: column;
+		& .transactions {
+			& button {
+				width: 100%;
+			}
+		}
+	}
+}

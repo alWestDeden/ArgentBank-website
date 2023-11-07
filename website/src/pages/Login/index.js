@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { verifyLogin } from "../../features/verifyLogin"
@@ -9,16 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
 
 function Login() {
-	const [user, setUser] = useState()
 	// check email format
 	function checkEmail(e) {
-		let regex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
+		const userNameInput = document.getElementById("email")
+		const regex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
 		let resultat = regex.test(e.target.value)
 		if (!resultat) {
+			userNameInput.classList.add("animation")
 			// create a variable pointing to the alert element
 			const alert = document.getElementById("login--alert")
 			alert.innerText = "Format de l'email invalide !"
 			setTimeout(() => {
+				userNameInput.classList.remove("animation")
 				alert.innerText = ""
 			}, 2000)
 		}
@@ -35,13 +37,12 @@ function Login() {
 		// create an user object with the inputs values
 		const login = { email: formJson.email, password: formJson.password }
 		const remember = formJson.rememberMe
-		console.log(remember)
 		if (!remember) {
 			setTimeout(() => {
 				dispatch(profileActions.reset())
 				dispatch(loginActions.reset())
 				navigate("/")
-			}, 30000)
+			}, 180000)
 		}
 		//verify user login
 		dispatch(verifyLogin(login, remember))
@@ -98,7 +99,7 @@ function Login() {
 					}, 1000)
 			}
 		}
-	}, [dispatch, navigate, user, returned])
+	}, [dispatch, navigate, returned])
 	return (
 		<div className='login-background'>
 			<div className='login'>
@@ -108,11 +109,27 @@ function Login() {
 				<form onSubmit={submitForm}>
 					<div className='input-wrapper'>
 						<label>Username</label>
-						<input type='text' name='email' onBlur={(e) => checkEmail(e)} autoComplete='on'></input>
+						<input
+							type='text'
+							name='email'
+							id='email'
+							maxLength='32'
+							minLength='3'
+							placeholder='email'
+							autoComplete='on'
+							required
+							onBlur={(e) => checkEmail(e)}></input>
 					</div>
 					<div className='input-wrapper'>
 						<label>Password</label>
-						<input type='password' name='password' autoComplete='on'></input>
+						<input
+							type='password'
+							name='password'
+							maxLength='24'
+							minLength='3'
+							placeholder='password'
+							autoComplete='on'
+							required></input>
 					</div>
 					<div className='remember-me'>
 						<input

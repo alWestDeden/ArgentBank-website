@@ -16,4 +16,11 @@
 }
 .feature p {
   margin: 16px 0;
+}
+
+@media only screen and (max-width: 920px) {
+  .feature {
+    width: 100%;
+    padding: 40px;
+  }
 }/*# sourceMappingURL=feature.css.map */

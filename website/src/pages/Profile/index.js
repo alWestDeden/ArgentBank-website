@@ -17,14 +17,17 @@ function Profile() {
 	const [updatable, setUpdatable] = useState(true)
 	// check email format
 	function checkUserName(e) {
+		const userNameInput = document.getElementById("userName")
 		// create a variable pointing to the alert element
 		const alert = document.getElementById("login--alert")
 		let regex = new RegExp("[^a-zA-Z0-9_-]+")
 		let resultat = regex.test(e.target.value)
 		if (resultat) {
+			userNameInput.classList.add("animation")
 			alert.innerText = "Only letters, numbers, - and _ characters allowed!"
 			setUpdatable(false)
 		} else {
+			userNameInput.classList.remove("animation")
 			alert.innerText = ""
 			setUpdatable(true)
 		}
@@ -105,6 +108,8 @@ function Profile() {
 						<input
 							type='text'
 							name='userName'
+							id='userName'
+							maxLength='16'
 							defaultValue={userName}
 							onChange={(e) => {
 								checkUserName(e)
