@@ -1,23 +1,19 @@
 @import "./variables.scss";
-
 .feature {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	width: 27%;
-
 	& img {
 		width: 100px;
 		border: 10px solid $third-color;
 		border-radius: 50%;
 		padding: 1rem;
 	}
-
 	& h3 {
 		margin: 20px 0 8px;
 	}
-
 	& p {
 		margin: 16px 0;
 	}

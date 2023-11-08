@@ -9,5 +9,4 @@ function Feature({ icon, iconAlt, title, text }) {
 		</div>
 	)
 }
-
 export default Feature

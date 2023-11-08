@@ -12,10 +12,11 @@ import Profile from "./pages/Profile"
 
 const domNode = document.getElementById("root")
 const root = createRoot(domNode)
-
 root.render(
 	<React.StrictMode>
+		{/* Define the route of each element */}
 		<Router basename='/ArgentBank-website'>
+			{/* Provide the store to all the wrapped elements */}
 			<Provider store={store}>
 				<Header />
 				<Routes>
@@ -23,7 +24,6 @@ root.render(
 					<Route path='/user/login' element={<Login />} />
 					<Route path='/user/signup' element={<User />} />
 					<Route path='/user/profile' element={<Profile />} />
-					{/* <Route path='*' element={<Error />} /> */}
 				</Routes>
 				<Footer />
 			</Provider>

@@ -1,10 +1,8 @@
 @import "./variables.scss";
-
 .profile-background {
 	background-color: $dark-color;
 	padding: 3rem 0 55%;
 	height: 100%;
-
 	& .profile {
 		position: relative;
 		display: flex;
@@ -15,13 +13,11 @@
 		width: 300px;
 		margin: 0 auto;
 		padding: 2rem;
-
 		& .arrow-left {
 			position: absolute;
 			left: 10px;
 			top: 10px;
 		}
-
 		& #login--alert {
 			color: red;
 			font-size: 1rem;
@@ -29,21 +25,17 @@
 			min-height: 2.75rem;
 			margin-block: 0;
 		}
-
 		& .input-wrapper {
 			margin-bottom: 16px;
-
 			& label {
 				font-weight: bold;
 			}
-
 			& input {
 				width: 100%;
 				padding: 5px;
 				font-size: 1.2rem;
 			}
 		}
-
 		& .profile-button {
 			background-color: $third-color;
 			color: $light-color;
@@ -52,7 +44,7 @@
 			width: 100%;
 			border: none;
 		}
-
+		// if userName is not allowed the validation's button stay greyed
 		& .greyed {
 			background-color: grey;
 		}

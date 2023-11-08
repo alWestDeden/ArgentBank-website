@@ -5,7 +5,7 @@ const initialState = {
 	token: null,
 	returned: null,
 }
-
+// Verify log in
 export function verifyLogin(login, remember) {
 	// use a asynchronous thunk
 	return async (dispatch, getState) => {
@@ -41,13 +41,13 @@ export function verifyLogin(login, remember) {
 		}
 	}
 }
-
+// Verify log in's actions and reducer
 const { actions, reducer } = createSlice({
 	name: "login",
 	initialState,
 	reducers: {
 		fetching: {
-			// change state status regarding previous state
+			// change status regarding previous state
 			reducer: (draft) => {
 				if (draft.status === "void") {
 					draft.status = "pending"
@@ -77,7 +77,7 @@ const { actions, reducer } = createSlice({
 			},
 		},
 		returned: {
-			// store the error message, pass the status to rejected and reinitialize the orthers states
+			// store the error message, reinitialize the token, pass the status to rejected
 			reducer: (draft, action) => {
 				if (draft.status === "pending" || draft.status === "updating") {
 					draft.returned = action.payload
@@ -89,11 +89,12 @@ const { actions, reducer } = createSlice({
 			},
 		},
 		reset: {
+			// reinitialize all
 			reducer: () => initialState,
 		},
 	},
 })
-
+// export reset action
 export const { reset } = actions
-
+// export reducer
 export default reducer

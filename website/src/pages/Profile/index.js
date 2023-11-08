@@ -1,40 +1,47 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
+import * as profileActions from "../../features/getProfile"
 import modifyUserName from "../../features/modifyUserName"
-import "../../style/Profile.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleUser, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import * as profileActions from "../../features/getProfile"
+import "../../style/Profile.scss"
 
 function Profile() {
 	// define functions dispatch & navigate to use hook useDispatch & useNavigate in others levels
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	//get the token and the user from the store
+	// get the token and the user from the store
 	const token = useSelector((state) => state.login.token)
 	const user = useSelector((state) => state.user)
+	// define an updatable state to change the color of the submit button
 	const [updatable, setUpdatable] = useState(true)
-	// check email format
+	// check Username format
 	function checkUserName(e) {
 		const userNameInput = document.getElementById("userName")
-		// create a variable pointing to the alert element
 		const alert = document.getElementById("login--alert")
 		let regex = new RegExp("[^a-zA-Z0-9_-]+")
 		let resultat = regex.test(e.target.value)
+		// when the entry is wrong
 		if (resultat) {
+			// animate the input
 			userNameInput.classList.add("animation")
+			// print an alert message
 			alert.innerText = "Only letters, numbers, - and _ characters allowed!"
+			// can't update the Username with the current entry
 			setUpdatable(false)
 		} else {
+			//stop the animation and the alert message
 			userNameInput.classList.remove("animation")
 			alert.innerText = ""
+			// can update the Username with the current entry
 			setUpdatable(true)
 		}
 	}
-	// submit form
+	// submit Username form
 	async function submitForm(e) {
 		e.preventDefault()
+		// when the Username is updatable
 		if (await updatable) {
 			// get form inputs values
 			const form = e.target
@@ -43,16 +50,16 @@ function Profile() {
 			// create an user object with the inputs values
 			const userName = { userName: formJson.userName }
 			const code = await modifyUserName(userName, token)
-			// create a variable pointing to the alert element
-			const alert = document.getElementById("login--alert")
 			// if user is authorized go to is account otherwise print an error
+			const alert = document.getElementById("login--alert")
 			switch (code) {
-				// if user authorized, go to his account's page
+				// user authorized, go to his account's page
 				case 200:
 					navigate("/user/signup")
+					// update the store with the new Username
 					dispatch(profileActions.update(formJson.userName))
 					break
-				// if user unknown, print an error message
+				// user unknown
 				case 400:
 					alert.innerText = "Invalid fields !"
 					setTimeout(() => {
@@ -61,7 +68,7 @@ function Profile() {
 						}
 					}, 1000)
 					break
-				// if server not working, print an error message
+				// server not working
 				case 500:
 					alert.innerText = "Internal Server Error !"
 					setTimeout(() => {
@@ -70,7 +77,7 @@ function Profile() {
 						}
 					}, 1000)
 					break
-				// for others kind of errors, print an error message
+				// others kind of errors
 				default:
 					alert.innerText = "Connection refused !"
 					setTimeout(() => {
@@ -81,7 +88,7 @@ function Profile() {
 			}
 		}
 	}
-	// get the various user's infos (to pre-render fields) from user
+	// get the various user's infos to complete the fields
 	const { email, firstName, lastName, userName } = user
 	return (
 		<div className='profile-background'>
@@ -111,17 +118,17 @@ function Profile() {
 							id='userName'
 							maxLength='16'
 							defaultValue={userName}
+							// check Username format
 							onChange={(e) => {
 								checkUserName(e)
-								// setUserName(e.target.value)
 							}}></input>
 					</div>
 					<p id='login--alert'> </p>
+					{/* change the button regarding updatable state */}
 					<button className={updatable ? "profile-button" : "profile-button greyed"}>Update Profile</button>
 				</form>
 			</div>
 		</div>
 	)
 }
-
 export default Profile

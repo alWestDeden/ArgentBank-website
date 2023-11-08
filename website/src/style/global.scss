@@ -1,33 +1,26 @@
 @import "./variables.scss";
-
 * {
 	font-family: $font-family;
 	color: $primary-color;
 	font-size: 16px;
-
 	body {
 		margin: 0;
 	}
-
 	& a {
 		text-decoration: none;
 		font-weight: bold;
-
 		& svg {
 			margin-right: 8px;
 		}
 	}
-
 	& h1 {
 		display: inline;
 		font-weight: normal;
 	}
-
 	& h2 {
 		font-size: 24px;
 		font-weight: bold;
 	}
-
 	& h3 {
 		color: $secondary-color;
 		font-size: 20px;

@@ -1,5 +1,4 @@
 @import "./variables.scss";
-
 .banner {
 	background-image: url(../assets/image/bank-tree.jpeg);
 	background-position: 0% 33%;
@@ -8,7 +7,6 @@
 	height: 400px;
 	width: 100%;
 	position: relative;
-
 	& .overlay {
 		position: absolute;
 		top: 50px;
@@ -16,7 +14,6 @@
 		width: 300px;
 		background-color: $light-color;
 		padding: 2rem;
-
 		& p {
 			margin-top: 19px;
 		}

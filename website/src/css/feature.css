@@ -1,3 +1,10 @@
+.animation {
+  animation: shake 0.4s ease-in-out 0s 2;
+  color: #ff9494;
+  border: 2px solid #ff9494;
+  border-radius: 5px;
+}
+
 .feature {
   display: flex;
   flex-direction: column;

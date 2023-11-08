@@ -1,12 +1,13 @@
-import "../../style/Home.scss"
-import "../../style/global.scss"
 import Banner from "../../components/Banner"
 import Feature from "../../components/Feature"
 import Chat from "../../assets/image/icon-chat.png"
 import Money from "../../assets/image/icon-money.png"
 import Security from "../../assets/image/icon-security.png"
+import "../../style/global.scss"
+import "../../style/Home.scss"
 
 function Home() {
+	// declare an array of objects containing the various commitment of Argent Bank
 	const features = [
 		{
 			icon: Chat,
@@ -27,12 +28,11 @@ function Home() {
 			text: "We use top of the line encryption to make sure your data and money is always safe.",
 		},
 	]
-
 	return (
 		<div className='home'>
 			<Banner />
 			<section className='features'>
-				{/* render all apartment's cards from the JSON file */}
+				{/* render all commitment's cards from the array above */}
 				{features.map((feature) => (
 					<Feature
 						key={feature.iconAlt}
@@ -46,5 +46,4 @@ function Home() {
 		</div>
 	)
 }
-
 export default Home

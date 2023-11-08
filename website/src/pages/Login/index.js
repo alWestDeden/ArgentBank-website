@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { verifyLogin } from "../../features/verifyLogin"
 import * as profileActions from "../../features/getProfile"
 import * as loginActions from "../../features/verifyLogin"
-import "../../style/Login.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons"
+import "../../style/Login.scss"
 
 function Login() {
 	// check email format
@@ -14,29 +14,34 @@ function Login() {
 		const userNameInput = document.getElementById("email")
 		const regex = new RegExp("[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+")
 		let resultat = regex.test(e.target.value)
+		// when the entry is wrong...
 		if (!resultat) {
+			// animate the input (shaking)...
 			userNameInput.classList.add("animation")
-			// create a variable pointing to the alert element
+			// and print an alert.
 			const alert = document.getElementById("login--alert")
 			alert.innerText = "Format de l'email invalide !"
 			setTimeout(() => {
+				// after 2s stop the input's shaking and the alert's print
 				userNameInput.classList.remove("animation")
 				alert.innerText = ""
 			}, 2000)
 		}
 	}
-	// define functions dispatch to use hook useDispatch in others levels
+	// define function dispatch and navigate to use hook useDispatch and useNavigate in others levels
 	const dispatch = useDispatch()
-	// submit form
+	const navigate = useNavigate()
+	// submit login form
 	async function submitForm(e) {
 		e.preventDefault()
-		// get form inputs values
+		// get form's inputs values
 		const form = e.target
 		const formData = new FormData(form)
 		const formJson = Object.fromEntries(formData.entries())
 		// create an user object with the inputs values
 		const login = { email: formJson.email, password: formJson.password }
 		const remember = formJson.rememberMe
+		// if "Remember Me" is not checked: remove all elemnents from the store and return to Home Page after 3min
 		if (!remember) {
 			setTimeout(() => {
 				dispatch(profileActions.reset())
@@ -44,25 +49,23 @@ function Login() {
 				navigate("/")
 			}, 180000)
 		}
-		//verify user login
+		// verify user login
 		dispatch(verifyLogin(login, remember))
 	}
-	// define function navigate to use hook useNavigate in others levels
-	const navigate = useNavigate()
 	// check the code returned by user authentification
 	const returned = useSelector((state) => state.login.returned)
-	// update store when user change !!!!!!!!!???????
+	// update Page when code returned change
 	useEffect(() => {
+		// prevent error when first rendering the Page
 		if (returned !== null) {
-			// create a variable pointing to the alert element
-			const alert = document.getElementById("login--alert")
 			// if user is authorized go to is account otherwise print an error
+			const alert = document.getElementById("login--alert")
 			switch (returned) {
-				// if user authorized, go to his account's page
+				// user authorized
 				case 200:
 					navigate("/user/signup")
 					break
-				// if user unknown, print an error message
+				// user unknown
 				case 400:
 					alert.innerText = "User unknown !"
 					setTimeout(() => {
@@ -71,7 +74,7 @@ function Login() {
 						}
 					}, 1000)
 					break
-				// if server not working, print an error message
+				// server not working
 				case 500:
 					alert.innerText = "Internal Server Error !"
 					setTimeout(() => {
@@ -80,7 +83,7 @@ function Login() {
 						}
 					}, 1000)
 					break
-				// if server not working, print an error message
+				// server not working
 				case "Failed to fetch":
 					alert.innerText = "Failed to fetch !"
 					setTimeout(() => {
@@ -89,7 +92,7 @@ function Login() {
 						}
 					}, 1000)
 					break
-				// for others kind of errors, print an error message
+				// others kind of errors
 				default:
 					alert.innerText = "Error uknown !"
 					setTimeout(() => {
@@ -118,6 +121,7 @@ function Login() {
 							placeholder='email'
 							autoComplete='on'
 							required
+							// check email format
 							onBlur={(e) => checkEmail(e)}></input>
 					</div>
 					<div className='input-wrapper'>
@@ -135,6 +139,7 @@ function Login() {
 						<input
 							type='checkbox'
 							name='rememberMe'
+							// show a tooltip to explain the use of the checkbox "Remember me"
 							title='Not select: logged for 3 min !&#013;Selected: logged for ever !'></input>
 						<label>Remember me</label>
 					</div>
@@ -144,5 +149,4 @@ function Login() {
 		</div>
 	)
 }
-
 export default Login

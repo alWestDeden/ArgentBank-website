@@ -1,11 +1,8 @@
 @import "./variables.scss";
-@import "./animation.scss";
-
 .login-background {
 	background-color: $dark-color;
 	padding: 3rem 0 55%;
 	height: 100%;
-
 	& .login {
 		display: flex;
 		flex-direction: column;
@@ -15,7 +12,7 @@
 		width: 300px;
 		margin: 0 auto;
 		padding: 2rem;
-
+		// show alert messages within the modal
 		& #login--alert {
 			color: red;
 			font-size: 1rem;
@@ -23,21 +20,17 @@
 			min-height: 2.75rem;
 			margin-block: 0;
 		}
-
 		& .input-wrapper {
 			margin-bottom: 16px;
-
 			& label {
 				font-weight: bold;
 			}
-
 			& input {
 				width: 100%;
 				padding: 5px;
 				font-size: 1.2rem;
 			}
 		}
-
 		& .login-button {
 			background-color: $third-color;
 			color: $light-color;
@@ -48,11 +41,4 @@
 			text-decoration: underline;
 		}
 	}
-}
-
-.animation {
-	animation: shake 0.4s ease-in-out 0s 2;
-	color: #ff9494;
-	border: 2px solid #ff9494;
-	border-radius: 5px;
 }
