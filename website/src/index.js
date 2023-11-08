@@ -13,7 +13,7 @@ import Profile from "./pages/Profile"
 const domNode = document.getElementById("root")
 const root = createRoot(domNode)
 root.render(
-	<React.StrictMode>
+	<>
 		{/* Define the route of each element */}
 		<Router basename='/ArgentBank-website'>
 			{/* Provide the store to all the wrapped elements */}
@@ -28,5 +28,5 @@ root.render(
 				<Footer />
 			</Provider>
 		</Router>
-	</React.StrictMode>
+	</>
 )
