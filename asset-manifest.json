@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/ArgentBank-website/website/react-gh-pages/static/css/main.ae71d505.css",
-    "main.js": "/ArgentBank-website/website/react-gh-pages/static/js/main.04458875.js",
-    "static/js/787.71e672d5.chunk.js": "/ArgentBank-website/website/react-gh-pages/static/js/787.71e672d5.chunk.js",
-    "static/media/logo.svg": "/ArgentBank-website/website/react-gh-pages/static/media/logo.b2e5a01e505f739f1484b881277d5186.svg",
-    "index.html": "/ArgentBank-website/website/react-gh-pages/index.html",
-    "main.ae71d505.css.map": "/ArgentBank-website/website/react-gh-pages/static/css/main.ae71d505.css.map",
-    "main.04458875.js.map": "/ArgentBank-website/website/react-gh-pages/static/js/main.04458875.js.map",
-    "787.71e672d5.chunk.js.map": "/ArgentBank-website/website/react-gh-pages/static/js/787.71e672d5.chunk.js.map"
+    "main.css": "/ArgentBank-website/static/css/main.e56cae85.css",
+    "main.js": "/ArgentBank-website/static/js/main.79b7fb7e.js",
+    "static/media/bank-tree.jpeg": "/ArgentBank-website/static/media/bank-tree.ea968745fcc6b9c188b1.jpeg",
+    "index.html": "/ArgentBank-website/index.html",
+    "main.e56cae85.css.map": "/ArgentBank-website/static/css/main.e56cae85.css.map",
+    "main.79b7fb7e.js.map": "/ArgentBank-website/static/js/main.79b7fb7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae71d505.css",
-    "static/js/main.04458875.js"
+    "static/css/main.e56cae85.css",
+    "static/js/main.79b7fb7e.js"
   ]
 }
