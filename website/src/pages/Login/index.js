@@ -50,7 +50,7 @@ function Login() {
 			}, 180000)
 		}
 		// verify user login
-		dispatch(verifyLogin(login, remember))
+		dispatch(verifyLogin(login))
 	}
 	// check the code returned by user authentification
 	const returned = useSelector((state) => state.login.returned)

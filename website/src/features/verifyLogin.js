@@ -6,7 +6,7 @@ const initialState = {
 	returned: null,
 }
 // Verify log in
-export function verifyLogin(login, remember) {
+export function verifyLogin(login) {
 	// use a asynchronous thunk
 	return async (dispatch, getState) => {
 		// check if any request allready pending
